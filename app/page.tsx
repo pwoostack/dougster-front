@@ -2,7 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 
 async function getArticles() {
-  const res = await fetch("http://127.0.0.1:1337/api/articles?populate=*", {
+  // LA MODIFICATION MAGIQUE EST ICI 👇
+  const res = await fetch("http://127.0.0.1:1337/api/articles?populate=*&pagination[pageSize]=100", {
     cache: "no-store",
   });
 
